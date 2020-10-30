@@ -21,6 +21,13 @@ from django.conf.urls.static import static
 from courses.views import CourseListView
 
 
+
+api_urls = [
+    path('user/', include('users.api.urls', namespace='users')),
+    path('', include('courses.api.urls', namespace='courses')),
+]
+
+
 urlpatterns = [
     path('', CourseListView.as_view(), name='course_list'),
     path('admin/', admin.site.urls),
@@ -28,8 +35,10 @@ urlpatterns = [
 	path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')),
     path('students/', include('students.urls')),
-    path('api/', include('courses.api.urls', namespace='api')),
-    path('authentication/', include('authentication.urls', namespace='authentication')),
+    path('api/', include(api_urls)),
+
+    # path('api/', include('courses.api.urls', namespace='api')),
+    # path('authentication/', include('authentication.urls', namespace='authentication')),
 
 
 ]

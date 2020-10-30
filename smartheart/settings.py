@@ -39,7 +39,6 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost').split(',')
 # Application definition
 
 INSTALLED_APPS = [
-    'authentication.apps.AuthenticationConfig',
     'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
     'students.apps.StudentsConfig',
     'embed_video',
     'memcache_status',
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'authentication.User'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 
 # Internationalization
