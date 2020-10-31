@@ -25,6 +25,7 @@ class UserRegistrationAPIView(CreateAPIView):
 
 		user = serializer.instance
 		data = serializer.data
+		data['message'] = "Successfully registered"
 
 		headers = self.get_success_headers(serializer.data)
 
@@ -39,7 +40,6 @@ class UserRegistrationAPIView(CreateAPIView):
 user_create = UserRegistrationAPIView.as_view()
 
 
-from rest_framework_simplejwt.tokens import RefreshToken
 class UserLoginAPIView(GenericAPIView):
     authentication_classes = ()
     permission_classes = (permissions.AllowAny,)
@@ -49,15 +49,14 @@ class UserLoginAPIView(GenericAPIView):
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
 
-        if serializer.is_valid():
-        	# token = RefreshToken.for_user(serializer.data.email)
-        	print(serializer.data)
+        if serializer.is_valid(): #raise_exception=True
         	return Response(
                 data=serializer.data,
                 status=status.HTTP_200_OK,
             )
         else:
             return Response(
+            	
                 data=serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST,
             )

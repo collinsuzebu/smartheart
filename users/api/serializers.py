@@ -9,6 +9,8 @@ from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
+User = get_user_model()
+
 class UserRegistrationSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True)
     first_name = serializers.CharField(min_length=2, required=True)
@@ -19,10 +21,16 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 
     class Meta:
-        model = get_user_model()
+        model = User
         fields = ('email', 'first_name', 'last_name', 'password', 'confirm_password', 'token')
 
     def validate(self, attrs):
+
+        user = User.objects.filter(email=attrs.get("email"))
+
+        if user:
+            raise serializers.ValidationError("email address has already been taken")
+
         if attrs.get('password') != attrs.get('confirm_password'):
             raise serializers.ValidationError("password does not match")
         del attrs['confirm_password']
@@ -53,7 +61,7 @@ class UserLoginSerializer(serializers.Serializer):
     }
 
     class Meta:
-        model = get_user_model()
+        model = User
         fields = ['email', 'password', 'token']
 
     def __init__(self, *args, **kwargs):
