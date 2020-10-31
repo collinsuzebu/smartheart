@@ -23,7 +23,7 @@ from courses.views import CourseListView
 
 
 api_urls = [
-    path('user/', include('users.api.urls', namespace='users')),
+    path('auth/', include('users.api.urls', namespace='users')),
     path('', include('courses.api.urls', namespace='courses')),
 ]
 
