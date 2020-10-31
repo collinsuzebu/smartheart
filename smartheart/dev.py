@@ -1,4 +1,4 @@
-from .settings import LOGGING, INSTALLED_APPS, MIDDLEWARE
+from .settings import LOGGING, INSTALLED_APPS, MIDDLEWARE, REST_FRAMEWORK
 
 LOGGING['handlers']['file']['backupCount'] = 1
 
@@ -7,9 +7,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE.insert(2, 'corsheaders.middleware.CorsMiddleware')
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework_simplejwt.authentication.JWTAuthentication',],
-}
+REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = ['rest_framework.permissions.AllowAny',]
