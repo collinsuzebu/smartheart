@@ -1,34 +1,146 @@
 [
 {
- "model": "courses.subject",
- "pk": 1,
- "fields": {
- "title": "Mathematics",
- "slug": "mathematics"
- }
+  "model": "courses.subject",
+  "pk": 1,
+  "fields": {
+    "title": "Mathematics",
+    "slug": "mathematics"
+  }
 },
 {
- "model": "courses.subject",
- "pk": 2,
- "fields": {
- "title": "Music",
- "slug": "music"
- }
+  "model": "courses.subject",
+  "pk": 2,
+  "fields": {
+    "title": "Music",
+    "slug": "music"
+  }
 },
 {
- "model": "courses.subject",
- "pk": 3,
- "fields": {
- "title": "Physics",
- "slug": "physics"
- }
+  "model": "courses.subject",
+  "pk": 3,
+  "fields": {
+    "title": "Physics",
+    "slug": "physics"
+  }
 },
 {
- "model": "courses.subject",
- "pk": 4,
- "fields": {
- "title": "Programming",
- "slug": "programming"
- }
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "Programming",
+    "slug": "programming"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "subject": 2,
+    "title": "Music 101",
+    "slug": "music-101",
+    "overview": "The overview of music 101. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet",
+    "created": "2020-10-31T09:28:26.699Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "subject": 4,
+    "title": "Introduction to Programming",
+    "slug": "introduction-to-programming",
+    "overview": "Ut porta aliquet mollis. Vestibulum quis purus tortor. Vivamus consequat diam ac lorem condimentum lobortis. Proin enim magna, sagittis quis enim eget, bibendum cursus purus. Maecenas sit amet porttitor libero. Suspendisse vel sapien id justo luctus pellentesque non non leo. Quisque nisl mi, ultrices sit amet mi ac, pharetra viverra urna. In hac habitasse platea dictumst.",
+    "created": "2020-10-31T09:30:33.909Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 4,
+  "fields": {
+    "owner": 16,
+    "subject": 3,
+    "title": "Mechanical Engines",
+    "slug": "mechanical-engines",
+    "overview": "The overview of mechanical engines 101. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "created": "2020-10-31T17:54:53.345Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 5,
+  "fields": {
+    "owner": 25,
+    "subject": 2,
+    "title": "Public Housing",
+    "slug": "public-housing",
+    "overview": "Public Housing Overview",
+    "created": "2020-11-01T04:16:38.519Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 2,
+  "fields": {
+    "course": 2,
+    "title": "Violin Lesson",
+    "description": "i ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 3,
+  "fields": {
+    "course": 2,
+    "title": "Piano Lesson",
+    "description": "nouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, b",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 4,
+  "fields": {
+    "course": 2,
+    "title": "Drums Lesson",
+    "description": "s aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapien",
+    "order": 2
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 5,
+  "fields": {
+    "course": 3,
+    "title": "Variables",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis magna sit amet turpis mattis ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi a nisi enim. Aenean eget finibus nunc, fermentum iaculis justo. Fusce nec tincidunt sem. Nunc libero nulla, blandit id elit vel, malesuada interdum nisl. Vivamus sit amet enim ligula.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 6,
+  "fields": {
+    "course": 3,
+    "title": "Constants",
+    "description": "Aenean accumsan, neque congue dapibus ultrices, nisl tortor interdum felis, id venenatis eros sem semper dui. Vestibulum sit amet mollis dolor. Fusce quis velit quam. Nunc eleifend eros a feugiat hendrerit. Vivamus posuere sit amet est non porttitor. Sed efficitur, sem vitae hendrerit vehicula, augue augue ultricies velit, at dapibus nisl tortor quis nisi.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 7,
+  "fields": {
+    "course": 3,
+    "title": "Mutation",
+    "description": "Aenean accumsan, neque congue dapibus ultrices, nisl tortor interdum felis, id venenatis eros sem semper dui. Vestibulum sit amet mollis dolor. Fusce quis velit quam. Nunc eleifend eros a feugiat hendrerit. Vivamus posuere sit amet est non porttitor. Sed efficitur, sem vitae hendrerit vehicula, augue augue ultricies velit, at dapibus nisl tortor quis nisi.",
+    "order": 2
+  }
 }
 ]
