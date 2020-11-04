@@ -9,6 +9,8 @@ django-environ==0.4.5
 django-memcache-status==2.2
 djangorestframework==3.11.0
 djangorestframework-simplejwt==4.4.0
+gitdb==4.0.5
+GitPython==3.1.11
 idna==2.10
 Pillow==7.0.0
 PyJWT==1.7.1
@@ -17,5 +19,6 @@ python-memcached==1.59
 pytz==2020.1
 requests==2.24.0
 six==1.15.0
+smmap==3.0.4
 sqlparse==0.4.1
 urllib3==1.25.11
