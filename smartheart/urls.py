@@ -19,7 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 from courses.views import CourseListView
-
+from updater.views import deploy_view
 
 
 api_urls = [
@@ -31,6 +31,7 @@ api_urls = [
 urlpatterns = [
     path('', CourseListView.as_view(), name='course_list'),
     path('admin/', admin.site.urls),
+    path("update_server/", deploy_view, name="update"),
 	path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 	path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')),
