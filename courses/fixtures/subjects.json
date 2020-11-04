@@ -61,7 +61,7 @@
   "model": "courses.course",
   "pk": 4,
   "fields": {
-    "owner": 16,
+    "owner": 1,
     "subject": 3,
     "title": "Mechanical Engines",
     "slug": "mechanical-engines",
@@ -74,7 +74,7 @@
   "model": "courses.course",
   "pk": 5,
   "fields": {
-    "owner": 25,
+    "owner": 1,
     "subject": 2,
     "title": "Public Housing",
     "slug": "public-housing",
