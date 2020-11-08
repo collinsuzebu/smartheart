@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'deployer',
+    'payment',
     'students.apps.StudentsConfig',
     'embed_video',
     'memcache_status',
